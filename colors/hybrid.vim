@@ -72,6 +72,7 @@ if has("gui_running")
   let s:orange     = "#de935f"
   let s:yellow     = "#f0c674"
   let s:green      = "#b5bd68"
+  let s:brightyellow      = "#fade3e"
   let s:aqua       = "#8abeb7"
   let s:blue       = "#81a2be"
   let s:purple     = "#b294bb"
@@ -163,6 +164,7 @@ exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
 exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
 exe "let s:fg_yellow     = ' ".s:vmode."fg=".s:yellow    ."'"
 exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
+exe "let s:fg_highlight  = ' ".s:vmode."fg=".s:brightyellow     ."'"
 exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
 exe "let s:fg_blue       = ' ".s:vmode."fg=".s:blue      ."'"
 exe "let s:fg_purple     = ' ".s:vmode."fg=".s:purple    ."'"
@@ -256,7 +258,7 @@ exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 "		PmenuSbar"
 "		PmenuThumb"
 exe "hi! Question"      .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
+exe "hi! Search"        .s:fg_highlight        .s:bg_none        .s:fmt_undr
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SpellBad"      .s:fg_red         .s:bg_none        .s:fmt_undr
 exe "hi! SpellCap"      .s:fg_blue        .s:bg_none        .s:fmt_undr
