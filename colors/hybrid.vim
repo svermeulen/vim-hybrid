@@ -244,7 +244,7 @@ exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
 exe "hi! ErrorMsg"      .s:fg_background  .s:bg_red         .s:fmt_stnd
 exe "hi! VertSplit"     .s:fg_window      .s:bg_none        .s:fmt_none
 exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
-exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+exe "hi! FoldColumn"    .s:fg_none        .s:bg_none  .s:fmt_none
 exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 "		Incsearch"
 exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
@@ -311,7 +311,9 @@ exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		Macro"
 "		PreCondit"
 
-exe "hi! Type"            .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! UserType"            .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! StorageClass"            .s:fg_blue      .s:bg_none        .s:fmt_none
 "		StorageClass"
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		Typedef"
