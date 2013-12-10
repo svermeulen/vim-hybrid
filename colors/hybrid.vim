@@ -64,6 +64,7 @@ let colors_name = "hybrid"
 if has("gui_running")
   let s:vmode      = "gui"
   let s:background = "#1d1f21"
+  let s:dark_bg    = "#131517"
   let s:foreground = "#c5c8c6"
   let s:selection  = "#373b41"
   let s:line       = "#282a2e"
@@ -85,6 +86,7 @@ if has("gui_running")
 else
   let s:vmode      = "cterm"
   let s:background = "234"
+  let s:dark_bg    = "234"
   let s:window     = "236"
   let s:darkcolumn = "234"
   let s:addbg      = "65"
@@ -137,6 +139,7 @@ let s:i      = ",italic"
 exe "let s:bg_none       = ' ".s:vmode."bg=".s:none      ."'"
 exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
+exe "let s:bg_darker_background = ' ".s:vmode."bg=".s:dark_bg."'"
 exe "let s:bg_selection  = ' ".s:vmode."bg=".s:selection ."'"
 exe "let s:bg_line       = ' ".s:vmode."bg=".s:line      ."'"
 exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
@@ -235,7 +238,8 @@ exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 "		Cursor"
 "		CursorIM"
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
+"exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLine"    .s:fg_none        .s:bg_darker_background        .s:fmt_none
 exe "hi! Directory"     .s:fg_blue        .s:bg_none        .s:fmt_none
 exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
 exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
