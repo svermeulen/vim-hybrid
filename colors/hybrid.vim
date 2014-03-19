@@ -68,6 +68,7 @@ if has("gui_running")
   let s:foreground = "#c5c8c6"
   let s:selection  = "#373b41"
   let s:line       = "#282a2e"
+  let s:cursor       = "#8B8BC4"
   let s:comment    = "#707880"
   let s:red        = "#cc6666"
   let s:orange     = "#de935f"
@@ -98,6 +99,7 @@ else
     let s:selection  = "8"    " DarkGrey
     let s:line       = "0"    " Black
     let s:comment    = "7"    " LightGrey
+    let s:cursor     = "0"
     let s:red        = "9"    " LightRed
     let s:orange     = "3"    " DarkYellow
     let s:yellow     = "11"   " LightYellow
@@ -110,6 +112,7 @@ else
     let s:selection  = "237"
     let s:line       = "235"
     let s:comment    = "243"
+    let s:cursor     = "235"
     let s:red        = "167"
     let s:orange     = "173"
     let s:yellow     = "221"
@@ -142,6 +145,7 @@ exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
 exe "let s:bg_darker_background = ' ".s:vmode."bg=".s:dark_bg."'"
 exe "let s:bg_selection  = ' ".s:vmode."bg=".s:selection ."'"
 exe "let s:bg_line       = ' ".s:vmode."bg=".s:line      ."'"
+exe "let s:bg_cursor     = ' ".s:vmode."bg=".s:cursor      ."'"
 exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
 exe "let s:bg_red        = ' ".s:vmode."bg=".s:red       ."'"
 exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
@@ -237,6 +241,7 @@ exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 "		Conceal"
 "		Cursor"
 "		CursorIM"
+exe "hi! Cursor"  .s:fg_background        .s:bg_cursor        .s:fmt_none
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
 "exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"    .s:fg_none        .s:bg_darker_background        .s:fmt_none
