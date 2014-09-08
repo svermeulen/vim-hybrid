@@ -64,12 +64,14 @@ let colors_name = "hybrid"
 if has("gui_running")
   let s:vmode      = "gui"
   let s:background = "#1d1f21"
+  let s:tabbg = "#333333"
   let s:dark_bg    = "#131517"
   let s:foreground = "#c5c8c6"
   let s:selection  = "#373b41"
   let s:line       = "#282a2e"
   let s:cursor       = "#8B8BC4"
   let s:comment    = "#707880"
+  let s:tab2    = "#9AA3AD"
   let s:red        = "#cc6666"
   let s:orange     = "#de935f"
   let s:yellow     = "#f0c674"
@@ -142,6 +144,7 @@ let s:i      = ",italic"
 exe "let s:bg_none       = ' ".s:vmode."bg=".s:none      ."'"
 exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
+exe "let s:tab_background = ' ".s:vmode."bg=".s:tabbg."'"
 exe "let s:bg_darker_background = ' ".s:vmode."bg=".s:dark_bg."'"
 exe "let s:bg_selection  = ' ".s:vmode."bg=".s:selection ."'"
 exe "let s:bg_line       = ' ".s:vmode."bg=".s:line      ."'"
@@ -167,6 +170,7 @@ exe "let s:fg_background = ' ".s:vmode."fg=".s:background."'"
 exe "let s:fg_selection  = ' ".s:vmode."fg=".s:selection ."'"
 exe "let s:fg_line       = ' ".s:vmode."fg=".s:line      ."'"
 exe "let s:fg_comment    = ' ".s:vmode."fg=".s:comment   ."'"
+exe "let s:fg_tab2    = ' ".s:vmode."fg=".s:tab2   ."'"
 exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
 exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
 exe "let s:fg_yellow     = ' ".s:vmode."fg=".s:yellow    ."'"
@@ -275,9 +279,11 @@ exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_none        .s:fmt_undr
 exe "hi! SpellRare"     .s:fg_purple      .s:bg_none        .s:fmt_undr
 exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
 exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
-exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
-"		TabLineFill"
-"		TabLineSel"
+
+exe "hi! TabLine"       .s:fg_tab2  .s:tab_background  .s:fmt_none
+exe "hi! TabLineFill"       .s:fg_foreground  .s:tab_background  .s:fmt_none
+exe "hi! TabLineSel"       .s:fg_foreground  .s:bg_darker_background  .s:fmt_bold
+
 exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 "		VisualNos"
